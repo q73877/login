@@ -1,0 +1,24 @@
+<%- include('../layouts/header.ejs') %>
+
+
+
+ <div class="container my-5">
+      <div class="list-group list-group-flush">
+          <% for(var i=0;i<list.length;i++){ %>
+        <div class="list-group-item flex-column align-items-start py-3">
+          <div class="d-flex justify-content-between">
+            <a class="text-dark w-75" href="/posts/<%=list[i]._id %>">
+              <h6><%= list[i].title %></h6>
+            </a>
+            <small class="text-black-50 text-right"><%= list[i].updatedAt %></small>
+          </div>
+          <div class="font-weight-light text-truncate"><%= list[i].content %></div>
+          
+        </div>
+
+        <% } %>
+      </div>
+    </div>
+
+
+<%- include('../layouts/footer.ejs') %>
